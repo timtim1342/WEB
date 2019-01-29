@@ -1,2 +1,2 @@
-bind = '0.0.0.0:8000'
-pythonpath = '/home/box/web/ask/qa/views.py'
+bind = '0.0.0.0:8080'
+pythonpath = '/home/box/web/hello.py'
