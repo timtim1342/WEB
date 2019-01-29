@@ -1,4 +1,5 @@
+from django.conf.urls import url
 from qa.views import test
-urlpatterns = patterns('qa.views',
-                       url(r'^$', test)
-                       )
+urlpatterns = [
+  url(r'.*', test)
+]
