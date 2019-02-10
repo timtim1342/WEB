@@ -9,9 +9,8 @@ class Question(models.Model):
   text = models.TextField()
   added_at = models.DateTimeField(auto_now_add=True)
   rating = models.IntegerField(default=0)
-  author = models.ForeignKey(User, related_name="question_author")
-  likesn = models.ManyToManyField(
-        User, related_name="question_like", blank=True)
+  author = models.ForeignKey(User)
+  likes = models.ManyToManyField(User)
   
 class QuestionManager(models.Manager):
   def new(self):
