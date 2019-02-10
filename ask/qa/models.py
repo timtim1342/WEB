@@ -13,6 +13,12 @@ class Question(models.Model):
   likesn = models.ManyToManyField(
         User, related_name="question_like", blank=True)
   
+class QuestionManager(models.Manager):
+  def new(self):
+    return self.order_by('-added_at')
+  def popular(self):
+    return self.order_by('-rating')
+  
 class Answer(models.Model):
   text = models.TextField()
   added_at = models.DateTimeField(auto_now_add=True)
